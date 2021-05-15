@@ -31,7 +31,7 @@ fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse
 fun Float.divideScale(i : Int, n : Int) : Float = Math.min(n.inverse(), maxScale(i, n)) * n
 fun Float.sinify() : Float = Math.sin(this * Math.PI).toFloat()
 
-fun Canvas.drawSquareRotTail(scale : Float, w : Float, h : Float, paint) {
+fun Canvas.drawSquareRotTail(scale : Float, w : Float, h : Float, paint : Paint) {
     val size : Float = Math.min(w, h) / sizeFactor
     val sf : Float = scale.sinify()
     val sf1 : Float = sf.divideScale(0, parts)
@@ -58,4 +58,20 @@ fun Canvas.drawSRTNode(i : Int, scale : Float, paint : Paint) {
     paint.strokeCap = Paint.Cap.ROUND
     paint.strokeWidth = Math.min(w, h) / strokeFactor
     drawSquareRotTail(scale, w, h, paint)
+}
+
+class SquareRotTailView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
 }

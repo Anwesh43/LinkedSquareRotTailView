@@ -21,7 +21,7 @@ val colors : Array<Int> = arrayOf(
 val parts : Int = 5
 val scGap : Float = 0.02f / parts
 val strokeFactor : Float = 90f
-val sizeFactor : Float = 3.9f
+val sizeFactor : Float = 9.9f
 val delay : Long = 20
 val backColor : Int = Color.parseColor("#BDBDBD")
 val deg : Float = 90f
@@ -39,7 +39,7 @@ fun Canvas.drawSquareRotTail(scale : Float, w : Float, h : Float, paint : Paint)
     val sf3 : Float = sf.divideScale(2, parts)
     val sf4 : Float = sf.divideScale(3, parts)
     val sf5 : Float = sf.divideScale(4, parts)
-    val x : Float = (w / 2 - size) * (1 - sf3 + sf5)
+    val x : Float = (w / 2 - size) * (1 - sf3) + (h / 2 - size) * sf5
     save()
     translate(w / 2, h / 2)
     rotate(deg * sf4)

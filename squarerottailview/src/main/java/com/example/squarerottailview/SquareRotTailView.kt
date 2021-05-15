@@ -211,4 +211,13 @@ class SquareRotTailView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SquareRotTailView {
+            val view : SquareRotTailView = SquareRotTailView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }

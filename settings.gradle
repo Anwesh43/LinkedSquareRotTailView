@@ -1,0 +1,3 @@
+include ':squarerottailview'
+include ':app'
+rootProject.name = "LinkedSquareRotTailView"
